@@ -4,6 +4,6 @@
 </script>
 
 <div>
-  <h1>{title}</h1>
+  <h2>{title}</h2>
   <p>{body}</p>
 </div>
