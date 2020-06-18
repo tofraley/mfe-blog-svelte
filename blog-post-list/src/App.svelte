@@ -1,18 +1,13 @@
 <script>
+  import { onMount } from 'svelte';
   import PostList from './PostList.svelte';
-  let posts = [{
-    title : 'First post woo!',
-    body : 'So this is the first post I ever made'
-  },
-  {
-    title : 'Second post, this is taking off!',
-    body : 'So this is the second post I ever made'
-  },
-  {
-    title : 'I am running out of ideas...',
-    body : 'Third post, sorry it has been so long guys!'
-  },
-  ];
+
+  let posts = [];
+
+  onMount(async () => {
+    const res = await fetch('https://jsonplaceholder.typicode.com/posts');
+    posts = await res.json();
+  });
 </script>
 
 <main>
